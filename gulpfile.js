@@ -69,3 +69,8 @@ exports.default = series(
     cacheBustTask,
     watchTask
 );
+
+exports.build = series(
+    parallel(scssTask, jsTask),
+    cacheBustTask
+);
